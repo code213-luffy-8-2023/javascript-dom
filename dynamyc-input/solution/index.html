@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Input</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      form {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        width: 300px;
+        background-color: #333;
+        padding: 1em;
+        border-radius: 5px;
+        color: #fff;
+      }
+
+      form > div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+        width: 100%;
+        gap: 0.3em;
+      }
+
+      input {
+        width: 100%;
+        display: block;
+        padding: 0.5em;
+        border-radius: 5px;
+        border: none;
+        box-sizing: border-box;
+      }
+
+      form button {
+        padding: 0.5em;
+        border-radius: 5px;
+        border: none;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      #preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #preview span {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <input
+          placeholder="Enter First Name"
+          title="first name"
+          type="text"
+          id="name"
+        />
+      </div>
+      <div>
+        <input
+          placeholder="Enter Last name"
+          title="last name"
+          type="text"
+          id="last-name"
+        />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="preview">
+      <h1>Output</h1>
+      <span id="name-preview">FirstName: </span>
+      <span id="lastName-preview">Last Name: </span>
+    </div>
+
+    <script>
+      const form = document.querySelector("form");
+      const nameInput = document.getElementById("name");
+      const lastNameInput = document.getElementById("last-name");
+
+      const namePreview = document.getElementById("name-preview");
+      const lastNamePreview = document.getElementById("lastName-preview");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        // string concatenation
+        namePreview.innerText = "First Name: " + nameInput.value;
+        // We can also use template literals
+        lastNamePreview.innerText = `Last Name: ${lastNameInput.value}`;
+      });
+      /*
+      * If we want the preview to be updated as the user types we can use the input event
+      nameInput.addEventListener("input", (event) => {
+        namePreview.innerText = event.target.value;
+      });
+
+      lastNameInput.addEventListener("input", (event) => {
+        lastNamePreview.innerText = event.target.value;
+      });
+      */
+    </script>
+  </body>
+</html>

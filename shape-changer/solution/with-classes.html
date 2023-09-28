@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape Changer</title>
+    <style>
+      .shape {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      .square {
+        border-radius: 0;
+      }
+
+      .circle {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="shape" class="shape circle"></div>
+    <button id="button">Change Shape</button>
+
+    <script>
+      const shape = document.getElementById("shape");
+      const button = document.getElementById("button");
+
+      button.addEventListener("click", () => {
+        shape.classList.toggle("circle");
+        shape.classList.toggle("square");
+      });
+    </script>
+  </body>
+</html>

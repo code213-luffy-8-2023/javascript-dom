@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Elements To Dom</title>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Content</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        voluptatum, quibusdam, quia, voluptate quod quos voluptas quae
+        exercitationem quas doloribus voluptatibus. Quisquam voluptatum,
+        quibusdam, quia, voluptate quod quos voluptas quae exercitationem quas
+        doloribus voluptatibus.
+      </p>
+    </div>
+    <button id="button">Add Element</button>
+    <button id="remove">Remove Element</button>
+    <script>
+      const button = document.getElementById("button");
+      const content = document.getElementById("content");
+
+      button.addEventListener("click", () => {
+        const newElement = document.createElement("p");
+        newElement.innerText =
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, quia, voluptate quod quos voluptas quae exercitationem quas doloribus voluptatibus. Quisquam voluptatum, quibusdam, quia, voluptate quod quos voluptas quae exercitationem quas doloribus voluptatibus.";
+        content.appendChild(newElement);
+      });
+
+      const remove = document.getElementById("remove");
+
+      remove.addEventListener("click", () => {
+        const lastElement = content.lastElementChild;
+        lastElement.remove();
+      });
+    </script>
+  </body>
+</html>

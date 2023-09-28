@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher with classes</title>
+    <style>
+      .light {
+        background-color: white;
+        color: black;
+      }
+
+      .dark {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="light">
+    <button id="toggle">Switch Theme</button>
+
+    <h1>Theme Switcher</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+      voluptatum, quibusdam, quia, voluptate quod quos voluptas quae
+      exercitationem quas doloribus voluptatibus. Quisquam voluptatum,
+      quibusdam, quia, voluptate quod quos voluptas quae exercitationem quas
+      doloribus voluptatibus.
+    </p>
+
+    <script>
+      const body = document.body;
+      const toggle = document.getElementById("toggle");
+
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        body.classList.toggle("light");
+      });
+    </script>
+  </body>
+</html>
